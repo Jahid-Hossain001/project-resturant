@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Admin Panel</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100">
+
+    <div class="flex min-h-screen">
+
+        <!-- SIDEBAR -->
+        <aside class="w-64 bg-white border-r">
+            <div class="p-6 text-xl font-bold text-indigo-600">
+                <a href="">Restauant Admin</a>
+            </div>
+
+
+            <nav class="px-4 space-y-2">
+                <a href="#" class="sidebar-item active" data-target="dashboard">Dashboard</a>
+                <a href="#" class="sidebar-item" data-target="menu">Menus</a>
+                <a href="#" class="sidebar-item" data-target="chefs">Chefs</a>
+                <a href="#" class="sidebar-item" data-target="bookings">Bookings</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="flex-1">
+
+            <!-- TOP NAVBAR -->
+            <header class="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
+                <span class="text-lg font-semibold"></span>
+
+                <!-- USER -->
+                <div class="relative">
+                    <button id="userBtn"
+                        class="group flex items-center gap-3 rounded-full border border-white/30 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 px-4 py-2 shadow-sm backdrop-blur hover:shadow-md transition">
+                        <img src="./assets/img/chef-3.png"
+                            class="w-9 h-9 rounded-full border-2 border-indigo-500 object-cover" />
+
+                        <div class="flex flex-col leading-tight text-left">
+                            <span class="text-sm font-semibold text-gray-800">
+                                Admin User
+                            </span>
+                            <span class="text-xs text-gray-500">
+                                Administrator
+                            </span>
+                        </div>
+
+                        <i class="fa-solid fa-angle-down text-gray-500 group-hover:text-indigo-600 transition"></i>
+                    </button>
+
+
+                    <div id="userDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white border rounded-lg shadow">
+                        <button class="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50">
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENT -->
+            <main class="p-8 space-y-8">
+
+                <!-- DASHBOARD -->
+                <section id="dashboard" class="content-section">
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h2 class="text-2xl font-bold">
+                            Welcome back, <span class="text-indigo-600">Admin</span> 👋
+                        </h2>
+                        <p class="text-gray-600 mt-1">
+                            Manage menus, chefs, and table bookings from here.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- MENU TABLE -->
+                <section id="menu" class="content-section hidden">
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h2 class="text-xl font-semibold mb-4 text-center">Menu Items</h2>
+
+
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-sm">
+                                <thead class="bg-gray-100 text-gray-600">
+                                    <tr>
+                                        <th class="text-left px-4 py-3">Image</th>
+                                        <th class="text-left px-4 py-3">Item Name</th>
+                                        <th class="text-left px-4 py-3">Description</th>
+                                        <th class="text-left px-4 py-3">Price</th>
+                                        <th class="text-left px-4 py-3">Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="divide-y">
+
+                                    <!-- ROW -->
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3">
+                                            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+                                                class="w-16 h-16 rounded-lg object-cover">
+                                        </td>
+                                        <td class="px-4 py-3 font-medium">Chicken Burger</td>
+                                        <td class="px-4 py-3 text-gray-500">
+                                            Grilled chicken patty with fresh lettuce, tomato & special sauce.
+                                        </td>
+                                        <td class="px-4 py-3 font-semibold">$6.99</td>
+                                        <td class="px-4 py-3">
+                                            <div class="flex gap-2">
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded hover:bg-blue-200">
+                                                    Edit
+                                                </button>
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-red-100 text-red-600 rounded hover:bg-red-200">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- ROW -->
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3">
+                                            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"
+                                                class="w-16 h-16 rounded-lg object-cover">
+                                        </td>
+                                        <td class="px-4 py-3 font-medium">Veg Pizza</td>
+                                        <td class="px-4 py-3 text-gray-500">
+                                            Loaded with fresh vegetables, mozzarella cheese & tomato sauce.
+                                        </td>
+                                        <td class="px-4 py-3 font-semibold">$9.50</td>
+                                        <td class="px-4 py-3">
+                                            <div class="flex gap-2">
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded hover:bg-blue-200">
+                                                    Edit
+                                                </button>
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-red-100 text-red-600 rounded hover:bg-red-200">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- ROW -->
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3">
+                                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
+                                                class="w-16 h-16 rounded-lg object-cover">
+                                        </td>
+                                        <td class="px-4 py-3 font-medium">Beef Steak</td>
+                                        <td class="px-4 py-3 text-gray-500">
+                                            Juicy grilled beef steak served with herbs & mashed potato.
+                                        </td>
+                                        <td class="px-4 py-3 font-semibold">$14.99</td>
+                                        <td class="px-4 py-3">
+                                            <div class="flex gap-2">
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded hover:bg-blue-200">
+                                                    Edit
+                                                </button>
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-red-100 text-red-600 rounded hover:bg-red-200">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+
+                        <div class="flex justify-end mt-4">
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded">
+                                ➕ Add Menu Item
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CHEF TABLE -->
+                <section id="chefs" class="content-section hidden">
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h2 class="text-xl font-semibold mb-4">Chefs</h2>
+
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-sm">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Image</th>
+                                        <th class="px-4 py-2 text-left">Name</th>
+                                        <th class="px-4 py-2 text-left">Designation</th>
+                                        <th class="px-4 py-2 text-left">Description</th>
+                                        <th class="px-4 py-2 text-left">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y">
+                                    <tr>
+                                        <td class="px-4 py-2">
+                                            <img src="./assets/img/chef-1.png" class="w-14 h-14 rounded-full">
+                                        </td>
+                                        <td class="px-4 py-2">John Smith</td>
+                                        <td class="px-4 py-2">Head Chef</td>
+                                        <td class="px-4 py-2 text-gray-500">10+ years experience</td>
+                                        <td class="px-4 py-2">
+                                            <div class="flex gap-2">
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded hover:bg-blue-200">
+                                                    Edit
+                                                </button>
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-red-100 text-red-600 rounded hover:bg-red-200">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="flex justify-end mt-4">
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded">
+                                ➕ Add New Chef
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BOOKING TABLE -->
+                <section id="bookings" class="content-section hidden">
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h2 class="text-xl font-semibold mb-4 text-center">Table Bookings</h2>
+
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-sm">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Name</th>
+                                        <th class="px-4 py-2 text-left">Phone</th>
+                                        <th class="px-4 py-2 text-left">Date</th>
+                                        <th class="px-4 py-2 text-left">Time</th>
+                                        <th class="px-4 py-2 text-left">Message</th>
+                                        <th class="px-4 py-2 text-left">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y">
+                                    <tr>
+                                        <td class="px-4 py-2">Rahim</td>
+                                        <td class="px-4 py-2">01700000000</td>
+                                        <td class="px-4 py-2">2026-01-10</td>
+                                        <td class="px-4 py-2">7:30 PM</td>
+                                        <td class="px-4 py-2 text-gray-500">Family dinner</td>
+                                        <td class="px-4 py-2">
+                                            <div class="flex gap-2">
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-green-100 text-green-700 rounded hover:bg-green-200">
+                                                    Approve
+                                                </button>
+                                                <button
+                                                    class="px-3 py-1 text-xs bg-red-100 text-red-700 rounded hover:bg-red-200">
+                                                    Reject
+                                                </button>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        const links = document.querySelectorAll('.sidebar-item');
+        const sections = document.querySelectorAll('.content-section');
+
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                links.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                sections.forEach(s => s.classList.add('hidden'));
+                document.getElementById(link.dataset.target).classList.remove('hidden');
+            });
+        });
+
+        document.getElementById('userBtn').onclick = () => {
+            document.getElementById('userDropdown').classList.toggle('hidden');
+        };
+    </script>
+
+    <style>
+        .sidebar-item {
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: #4b5563;
+        }
+
+        .sidebar-item.active {
+            background-color: #4f46e5;
+            color: white;
+        }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="min-h-screen bg-slate-100 flex items-center justify-center">
+
+    <div class="w-full max-w-lg bg-white rounded-2xl shadow-lg p-8">
+
+        <h2 class="text-2xl font-bold text-center mb-1">Create Account</h2>
+        <p class="text-gray-500 text-center mb-6">Register to get started</p>
+
+        <form class="space-y-4">
+
+            <!-- IMAGE UPLOAD -->
+            <div class="flex flex-col items-center gap-3">
+                <img id="profilePreview" src="https://i.pravatar.cc/120"
+                    class="w-24 h-24 rounded-full object-cover border" />
+
+                <input type="file" id="profileImage" accept="image/*" class="hidden" />
+
+                <label for="profileImage" class="cursor-pointer text-sm text-indigo-600 font-medium hover:underline">
+                    <i class="fa-solid fa-camera mr-1"></i> Upload Profile Image
+                </label>
+            </div>
+
+
+            <!-- NAME -->
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">First Name</label>
+                    <input type="text" class="w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-indigo-500"
+                        required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Last Name</label>
+                    <input type="text" class="w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-indigo-500"
+                        required>
+                </div>
+            </div>
+
+            <!-- USERNAME -->
+            <div>
+                <label class="block text-sm font-medium mb-1">Username</label>
+                <input type="text" class="w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-indigo-500"
+                    required>
+            </div>
+
+            <!-- EMAIL -->
+            <div>
+                <label class="block text-sm font-medium mb-1">Email</label>
+                <input type="email" class="w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-indigo-500"
+                    required>
+            </div>
+
+            <!-- PASSWORD -->
+            <div>
+                <label class="block text-sm font-medium mb-1">Password</label>
+                <input type="password" class="w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-indigo-500"
+                    required>
+            </div>
+
+            <!-- CONFIRM PASSWORD -->
+            <div>
+                <label class="block text-sm font-medium mb-1">Confirm Password</label>
+                <input type="password" class="w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-indigo-500"
+                    required>
+            </div>
+
+            <!-- SUBMIT -->
+            <button type="submit"
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold text-lg shadow-md transition">
+                Create Account
+            </button>
+
+        </form>
+
+        <!-- LOGIN LINK -->
+        <p class="text-sm text-center text-gray-500 mt-6">
+            Already have an account?
+            <a href="login.html" class="text-indigo-600 font-medium hover:underline">
+                Login
+            </a>
+        </p>
+
+    </div>
+
+    <!-- IMAGE PREVIEW SCRIPT -->
+    <script>
+        document.querySelector('#profileImage').addEventListener('change', function () {
+            document.querySelector('#profilePreview').src =
+                URL.createObjectURL(this.files[0]);
+        });
+    </script>
+
+
+</body>
+
+</html>
