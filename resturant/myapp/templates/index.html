@@ -1,6 +1,7 @@
 <!doctype html>
+{% load static %}
 
-<html lang="en" data-theme="light" data-assets-path="assets/" data-layout-path="free-landing-page/" dir="ltr"
+<html lang="en" data-theme="light" data-accaunts-path="accaunts/" data-layout-path="free-landing-page/" dir="ltr"
   class="scroll-smooth">
 
 <head>
@@ -12,7 +13,7 @@
 
   <meta name="description" content="" />
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="{% static 'accaunts/img/favicon/favicon.ico' %}" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -28,10 +29,10 @@
   <!-- endbuild -->
 
   <!-- Vendor CSS -->
-  <link rel="stylesheet" href="assets/dist/libs/flatpickr/dist/flatpickr.css" />
+  <link rel="stylesheet" href="{% static 'accaunts/dist/libs/flatpickr/dist/flatpickr.css' %}" />
 
   <!-- build:css -->
-  <link rel="stylesheet" href="assets/dist/css/output.css" />
+  <link rel="stylesheet" href="{% static 'accaunts/dist/css/output.css' %}" />
 
   <!-- Page CSS -->
 
@@ -201,7 +202,7 @@
               <span class="icon-[tabler--arrow-right] size-5 rtl:rotate-180"></span>
             </a>
           </div>
-          <img src="assets/img/dishes-hero.png" alt="Dishes" class="min-h-67 w-full object-cover" />
+          <img src="{% static 'accaunts/img/dishes-hero.png' %}" alt="Dishes" class="min-h-67 w-full object-cover" />
         </div>
       </section>
 
@@ -225,7 +226,7 @@
             <!-- Item 1 -->
             <div class="card card-border shadow-none hover:border-primary transition">
               <figure>
-                <img src="assets/img/grilled chicken.jpg" alt="Grilled Chicken" class="h-56 w-full object-cover">
+                <img src="{% static 'accaunts/img/grilled chicken.jpg' %}" alt="Grilled Chicken" class="h-56 w-full object-cover">
               </figure>
               <div class="card-body gap-3">
                 <div class="flex justify-between items-center">
@@ -241,7 +242,7 @@
             <!-- Item 2 -->
             <div class="card card-border shadow-none hover:border-primary transition">
               <figure>
-                <img src="assets/img/pasta.jpg" alt="Seafood Pasta" class="h-56 w-full object-cover">
+                <img src="{% static 'accaunts/img/pasta.jpg' %}" alt="Seafood Pasta" class="h-56 w-full object-cover">
               </figure>
               <div class="card-body gap-3">
                 <div class="flex justify-between items-center">
@@ -257,7 +258,7 @@
             <!-- Item 3 -->
             <div class="card card-border shadow-none hover:border-primary transition">
               <figure>
-                <img src="assets/img/pizza_2.jpg" alt="Cheese Pizza" class="h-56 w-full object-cover">
+                <img src="{% static 'accaunts/img/pizza_2.jpg' %}" alt="Cheese Pizza" class="h-56 w-full object-cover">
               </figure>
               <div class="card-body gap-3">
                 <div class="flex justify-between items-center">
@@ -273,7 +274,7 @@
             <!-- Item 4 -->
             <div class="card card-border shadow-none hover:border-primary transition">
               <figure>
-                <img src="assets/img/burger.jpg" alt="Burger" class="h-56 w-full object-cover">
+                <img src="{% static 'accaunts/img/burger.jpg'%}" alt="Burger" class="h-56 w-full object-cover">
               </figure>
               <div class="card-body gap-3">
                 <div class="flex justify-between items-center">
@@ -289,7 +290,7 @@
             <!-- Item 5 -->
             <div class="card card-border shadow-none hover:border-primary transition">
               <figure>
-                <img src="assets/img/sushi.png" alt="Sushi" class="h-56 w-full object-cover">
+                <img src="{% static 'accaunts/img/sushi.png' %}" alt="Sushi" class="h-56 w-full object-cover">
               </figure>
               <div class="card-body gap-3">
                 <div class="flex justify-between items-center">
@@ -305,7 +306,7 @@
             <!-- Item 6 -->
             <div class="card card-border shadow-none hover:border-primary transition">
               <figure>
-                <img src="assets/img/chocolate.jpg" alt="Dessert" class="h-56 w-full object-cover">
+                <img src="{% static 'accaunts/img/chocolate.jpg' %}" alt="Dessert" class="h-56 w-full object-cover">
               </figure>
               <div class="card-body gap-3">
                 <div class="flex justify-between items-center">
@@ -340,7 +341,7 @@
               </div>
               <!-- Video player and stats -->
               <div class="lg:h-161 relative mb-8 h-full w-full rounded-xl max-lg:space-y-6 sm:mb-16 lg:mb-24">
-                <img src="assets/img/restaurant-about-us.png" alt="about-us"
+              <img src="{% static 'accaunts/img/restaurant-about-us.png' %}" alt="about-us"
                   class="h-full w-full rounded-xl object-cover" />
                 <!-- Stats card overlapping the video section -->
                 <div
@@ -491,7 +492,7 @@
               <!-- Blog Card 1 -->
               <div class="card card-border shadow-none">
                 <figure>
-                  <img src="assets/img/free-blog-1.png" alt="Vegetable Market" />
+                  <img src="{% static 'accaunts/img/free-blog-1.png' %}" alt="Vegetable Market" />
                 </figure>
                 <div class="card-body gap-3">
                   <h5 class="card-title text-xl">Buffet Service</h5>
@@ -508,7 +509,7 @@
               <!-- Blog Card 2 -->
               <div class="card card-border shadow-none">
                 <figure>
-                  <img src="assets/img/free-blog-2.png" alt="Delivery Service" />
+                  <img src="{% static 'accaunts/img/free-blog-2.png' %}" alt="Delivery Service" />
                 </figure>
                 <div class="card-body gap-3">
                   <h5 class="card-title text-xl">Food delivery</h5>
@@ -525,7 +526,7 @@
               <!-- Blog Card 3 -->
               <div class="card card-border shadow-none">
                 <figure>
-                  <img src="assets/img/free-blog-3.png" alt="Cafeteria" />
+                  <img src="{% static 'accaunts/img/free-blog-3.png' %}" alt="Cafeteria" />
                 </figure>
                 <div class="card-body gap-3">
                   <h5 class="card-title text-xl">Cafeteria</h5>
@@ -563,9 +564,9 @@
                       <span class="icon-[tabler--arrow-right]"></span>
                     </a>
                   </div>
-                  <img src="assets/img/mint.png" alt="mint"
+                  <img src="{% static 'accaunts/img/mint.png'%}" alt="mint"
                     class="intersect-once intersect:motion-preset-slide-down-lg intersect:motion-duration-800 intersect:motion-opacity-in-0 intersect:motion-delay-100 absolute end-[21%] top-0 h-20 max-w-sm max-md:hidden" />
-                  <img src="assets/img/pizza.png" alt="Pizza"
+                  <img src="{% static 'accaunts/img/pizza.png' %}" alt="Pizza"
                     class="rtl:rotate-y-180 absolute end-0 top-0 h-full max-w-md rounded-br-3xl max-md:hidden" />
                 </div>
               </div>
@@ -589,7 +590,7 @@
               <!-- Team Member 1 -->
               <div class="card card-border hover:border-primary h-max shadow-none">
                 <figure class="bg-base-200 pt-10.5">
-                  <img src="assets/img/chef-1.png" alt="Cheyenne Workman" class="h-60 w-auto" />
+                  <img src="{% static 'accaunts/img/chef-1.png' %}" alt="Cheyenne Workman" class="h-60 w-auto" />
                 </figure>
                 <div class="card-body gap-3 p-5">
                   <h3 class="text-base-content text-lg font-medium">Cheyenne Workman</h3>
@@ -603,7 +604,7 @@
               <!-- Team Member 2 -->
               <div class="card card-border hover:border-primary h-max shadow-none">
                 <figure class="bg-base-200 pt-10.5">
-                  <img src="assets/img/chef-2.png" alt="Corey Rosser" class="h-60 w-auto" />
+                  <img src="{% static 'accaunts/img/chef-2.png' %}" alt="Corey Rosser" class="h-60 w-auto" />
                 </figure>
                 <div class="card-body gap-3 p-5">
                   <h3 class="text-base-content text-lg font-medium">Corey Rosser</h3>
@@ -617,7 +618,7 @@
               <!-- Team Member 3 -->
               <div class="card card-border hover:border-primary h-max shadow-none">
                 <figure class="bg-base-200 pt-10.5">
-                  <img src="assets/img/chef-3.png" alt="Marilyn Westervelt" class="h-60 w-auto" />
+                  <img src="{% static 'accaunts/img/chef-3.png' %}" alt="Marilyn Westervelt" class="h-60 w-auto" />
                 </figure>
                 <div class="card-body gap-3 p-5">
                   <h3 class="text-base-content text-lg font-medium">Marilyn Westervelt</h3>
@@ -631,7 +632,7 @@
               <!-- Team Member 4 -->
               <div class="card card-border hover:border-primary h-max shadow-none">
                 <figure class="bg-base-200 pt-10.5">
-                  <img src="assets/img/chef-4.png" alt="Ryan Passaquindici Arcand" class="h-60 w-auto" />
+                  <img src="{% static 'accaunts/img/chef-4.png' %}" alt="Ryan Passaquindici Arcand" class="h-60 w-auto" />
                 </figure>
                 <div class="card-body gap-3 p-5">
                   <h3 class="text-base-content text-lg font-medium">Ryan Passaquindici Arcand</h3>
@@ -823,20 +824,20 @@
   <!-- / Content -->
 
   <!-- Vendors JS -->
-  <script src="assets/dist/libs/tailwindcss-intersect/dist/observer.min.js"></script>
-  <script src="assets/dist/libs/flatpickr/dist/flatpickr.js"></script>
+  <script src="accaunts/dist/libs/tailwindcss-intersect/dist/observer.min.js"></script>
+  <script src="accaunts/dist/libs/flatpickr/dist/flatpickr.js"></script>
 
   <!-- FlyonUI JS -->
-  <script src="assets/dist/libs/flyonui/flyonui.js"></script>
+  <script src="accaunts/dist/libs/flyonui/flyonui.js"></script>
 
   <!-- Theme Utils JS -->
-  <script src="assets/dist/js/theme-utils.js"></script>
+  <script src="accaunts/dist/js/theme-utils.js"></script>
 
   <!-- Main JS -->
-  <script src="assets/dist/js/main.js"></script>
+  <script src="accaunts/dist/js/main.js"></script>
 
   <!-- Page JS -->
-  <script src="assets/dist/js/landing-page-free.js"></script>
+  <script src="accaunts/dist/js/landing-page-free.js"></script>
 
   <button id="scrollToTopBtn"
     class="btn btn-circle btn-soft btn-secondary/20 bottom-15 end-15 motion-preset-slide-right motion-duration-800 motion-delay-100 fixed absolute z-[3] hidden"
