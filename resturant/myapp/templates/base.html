@@ -1,10 +1,96 @@
 <!doctype html>
+{% load static %}
 
-<html lang="en" data-theme="light" data-assets-path="assets/" data-layout-path="free-landing-page/" dir="ltr"
+<html lang="en" data-theme="light" data-accaunts-path="accaunts/" data-layout-path="free-landing-page/" dir="ltr"
   class="scroll-smooth">
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>
+    {% block title %}
+    Restaurant
+    {% endblock %}
+  </title>
+
+  <meta name="description" content="" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'accaunts/img/favicon/favicon.ico' %}" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&ampdisplay=swap"
+    rel="stylesheet" />
+
+  <!-- Core CSS -->
+  <!-- endbuild -->
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="{% static 'accaunts/dist/libs/flatpickr/dist/flatpickr.css' %}" />
+
+  <!-- build:css -->
+  <link rel="stylesheet" href="{% static 'accaunts/dist/css/output.css' %}" />
+
+  <!-- Page CSS -->
+
+  <!-- Theme JS -->
+  <script type="text/javascript">
+    (function () {
+      try {
+        const root = document.documentElement;
+        const layoutPath = root.getAttribute('data-layout-path')?.replace('/', '') || 'dashboard-default';
+        const localStorageKey = `${layoutPath}-theme`;
+
+        // Theme configuration loaded from page-config.json at build time
+        window.THEME_CONFIG = { 'free-landing-page': { default: 'light', light: 'light', dark: 'dark', system: { light: 'light', dark: 'dark' } } };
+
+        // Get current system theme preference
+        const getSystemPreference = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Resolve theme based on user selection and layout configuration
+        const resolveTheme = (selectedTheme, layoutPath) => {
+          const layoutConfig = window.THEME_CONFIG[layoutPath];
+          if (!layoutConfig) return selectedTheme === 'system' ? (getSystemPreference() ? 'dark' : 'light') : selectedTheme;
+
+          if (selectedTheme === 'system') {
+            const systemConfig = layoutConfig.system;
+            const prefersDark = getSystemPreference();
+            return prefersDark ? systemConfig.dark : systemConfig.light;
+          }
+
+          return layoutConfig[selectedTheme] || selectedTheme || layoutConfig.default || 'light';
+        };
+
+        const savedTheme = localStorage.getItem(localStorageKey) || 'system';
+        const resolvedTheme = resolveTheme(savedTheme, layoutPath);
+
+        root.setAttribute('data-theme', resolvedTheme);
+      } catch (e) {
+        console.warn('Early theme script error:', e);
+      }
+    })();
+  </script>
+  {% block extra_css %}{% endblock %}
+</head>
+
+{% include 'includes/header.html' %}
 
 
+{% block content %}
+
+{% endblock %}
 
 
-</html>
+{% include 'includes/footer.html' %}
+
+
+{% block extra_js %}
+
+{% endblock %}
